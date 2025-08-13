@@ -146,17 +146,21 @@ body {
     rgba(255, 204, 0, 0.4) 100%
   );
   border-radius: 50% 50% 20% 20%;
-  transition: opacity 0.3s ease;
+  animation: flameWave 0.8s infinite;
+}
+
+.flame:nth-child(1) {
+  animation-delay: 0s;
 }
 
 .flame:nth-child(2) {
   height: 45px;
-  animation-delay: 0.1s;
+  animation-delay: 0.2s;
 }
 
 .flame:nth-child(3) {
   height: 35px;
-  animation-delay: 0.2s;
+  animation-delay: 0.4s;
 }
 
 @keyframes flameWave {

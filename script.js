@@ -67,8 +67,7 @@ function resetTimer() {
 startButton.addEventListener("click", toggleTimer);
 resetButton.addEventListener("click", resetTimer);
 updateTimer();
-  updateTimer();
-
+updateTimer();
 
 startButton.addEventListener("click", toggleTimer);
 resetButton.addEventListener("click", resetTimer);
