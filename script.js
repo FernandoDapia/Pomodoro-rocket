@@ -3,11 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
   let timeLeft = 30 * 60; // 30 minutos en segundos
   let timerId = null;
 
+  // Obtener elementos del DOM
   const timer = document.getElementById("timer");
   const startButton = document.getElementById("startButton");
   const resetButton = document.getElementById("resetButton");
   const status = document.getElementById("status");
   const energyBar = document.getElementById("energyBar");
+
+  // Verificar que todos los elementos existan
+  if (!timer || !startButton || !resetButton || !status || !energyBar) {
+    console.error("Elementos del DOM no encontrados");
+    return;
+  }
 
   function updateTimer() {
     const minutes = Math.floor(timeLeft / 60);
@@ -65,10 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTimer();
   }
 
+  // Añadir los event listeners una sola vez
   startButton.addEventListener("click", toggleTimer);
   resetButton.addEventListener("click", resetTimer);
+
+  // Inicializar el timer
   updateTimer();
 });
-startButton.addEventListener("click", toggleTimer);
-resetButton.addEventListener("click", resetTimer);
-updateTimer();
