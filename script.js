@@ -19,11 +19,11 @@ function updateTimer() {
   const percentage = (timeLeft / totalTime) * 100;
   energyBar.style.setProperty("--energy", `${percentage}%`);
 
-  // Ajustar solo la intensidad de las llamas
+  // Actualizar las llamas
   const flames = document.querySelectorAll(".flame");
   flames.forEach((flame, index) => {
-    const delay = index * 0.2; // Retardo diferente para cada llama
-    flame.style.animation = `flameWave 0.8s infinite ${delay}s`;
+    flame.style.animation = `flameWave 0.8s infinite ${index * 0.2}s`;
+    // Ajustar opacidad basada en el porcentaje de tiempo restante
     flame.style.opacity = percentage < 30 ? "0.5" : "1";
   });
 }
